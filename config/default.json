@@ -1,6 +1,6 @@
 {
   "jwtPrivateKey": "unsecureKey",
-  "db": "mongodb://192.168.99.100:27017/vidly",
+  "db": "mongodb+srv://majamaxadmin:LaRedO239@majamax-o3hsp.azure.mongodb.net/test?retryWrites=true",
   "port": "3900",
   "requiresAuth": true
 }

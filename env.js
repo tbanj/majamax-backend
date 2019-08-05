@@ -1,0 +1,1 @@
+majamax_url: process.env.MAJAMAX_URL,
