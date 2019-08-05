@@ -1,4 +1,4 @@
 {
   "jwtPrivateKey": "vidly_jwtPrivateKey",
-  "db": "MAJAMAX_DB"
+  "db": "majamax_db"
 }
