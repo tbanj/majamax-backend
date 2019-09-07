@@ -2,9 +2,15 @@ const validateObjectId = require("../middleware/validateObjectId");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
 const { Genre, validate } = require("../models/genre");
+const { storeOnlineGenre } = require("../controller/genre_controller");
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
+
+router.get("/online-genres", storeOnlineGenre
+  // (req, res) => {
+  //   return res.status(200).send("where");}
+);
 
 router.get("/", async (req, res) => {
   const genres = await Genre.find()
@@ -17,7 +23,7 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let genre = new Genre({ name: req.body.name });
+  let genre = new Genre({ id: req.body.id, name: req.body.name });
   genre = await genre.save();
 
   res.send(genre);
@@ -30,9 +36,7 @@ router.put("/:id", [auth, validateObjectId], async (req, res) => {
   const genre = await Genre.findByIdAndUpdate(
     req.params.id,
     { name: req.body.name },
-    {
-      new: true
-    }
+    { new: true }
   );
 
   if (!genre)
@@ -58,5 +62,7 @@ router.get("/:id", validateObjectId, async (req, res) => {
 
   res.send(genre);
 });
+
+
 
 module.exports = router;
