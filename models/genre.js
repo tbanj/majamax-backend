@@ -9,7 +9,6 @@ const genreSchema = new mongoose.Schema({
   named: {
     type: String,
     required: true,
-    minlength: 3,
     maxlength: 50,
   }
 });
