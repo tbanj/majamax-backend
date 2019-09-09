@@ -1,6 +1,6 @@
 {
   "jwtPrivateKey": "unsecureKey",
-  "db": "mongodb+srv://orbarcade:LaRedO239@majaxam-nnwuv.mongodb.net/test?retryWrites=true",
+  "db": "mongodb+srv://majamaxadmin:LaRedO239@majamax-o3hsp.azure.mongodb.net/test?retryWrites=true",
   "port": "3900",
   "requiresAuth": true
 }
